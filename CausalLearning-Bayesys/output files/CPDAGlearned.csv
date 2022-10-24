@@ -1,0 +1,21 @@
+ID,Variable 1,Dependency,Variable 2
+1,Age,-,Weakness
+2,Gender,-,Diabetes
+3,Gender,->,Kidney_disease
+4,Body_temperature,-,Drowsiness
+5,Sore_throat,-,Dry_cough
+6,Weakness,->,Breathing_problem
+7,Breathing_problem,->,Loss_of_sense_of_smell
+8,Drowsiness,->,Change_in_appetite
+9,Drowsiness,->,Loss_of_sense_of_smell
+10,Pain_in_chest,->,Breathing_problem
+11,Pain_in_chest,->,Heart_disease
+12,Pain_in_chest,->,Change_in_appetite
+13,Travel_history_to_infected_countries,-,Corona_result
+14,Diabetes,->,Heart_disease
+15,Diabetes,-,High_blood_pressue
+16,Lung_disease,-,Stroke_or_reduced_immunity
+17,Lung_disease,->,Kidney_disease
+18,Loss_of_sense_of_smell,->,Symptoms_progressed
+19,Corona_result,-,Pain_in_chest
+20,Corona_result,-,Lung_disease

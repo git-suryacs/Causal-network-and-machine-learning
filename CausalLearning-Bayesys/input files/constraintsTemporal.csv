@@ -1,0 +1,5 @@
+﻿ID,Tier 1,Tier 2,Tier 3,Tier 4,Tier 5,Tier 6,Tier 7,END
+1,Age,Diabetes,Body_temperature,Kidney_disease,Heart_disease,Weakness,Drowsiness,
+2,Gender,Corona_result,High_blood_pressue,Sore_throat,Stroke_or_reduced_immunity,Breathing_problem,Loss_of_sense_of_smell,
+3,Travel_history_to_infected_countries,,Lung_disease,,Dry_cough,,Change_in_appetite,
+4,,,,,Pain_in_chest,,,

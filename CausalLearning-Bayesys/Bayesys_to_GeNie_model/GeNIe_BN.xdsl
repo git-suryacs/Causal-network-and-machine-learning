@@ -1,0 +1,297 @@
+<?xml version="1.0" encoding="UTF-8"?> 
+<!-- This network was created in Bayesys v2.2 intended for GeNIe Academic, which can be used for academic teaching and research purposes only --> 
+<smile version="1.0" id="Bayesys" numsamples="127" discsamples="127"> 
+	 <nodes> 
+	 	 <cpt id="Age"> 
+	 	 	 <state id="18_25" /> 
+	 	 	 <state id="45_55" /> 
+	 	 	 <state id="35_45" /> 
+	 	 	 <state id="25_35" /> 
+	 	 	 <state id="60_80" /> 
+	 	 	 <state id="55_60" /> 
+	 	 	 <state id="25_36" /> 
+	 	 	 <probabilities>0.23622047244094488 0.11023622047244094 0.2204724409448819 0.30708661417322836 0.07874015748031496 0.03937007874015748 0.007874015748031496</probabilities> 
+	 	 </cpt> 
+	 	 <cpt id="Gender"> 
+	 	 	 <state id="1" /> 
+	 	 	 <state id="0" /> 
+	 	 	 <probabilities>0.5275590551181102 0.47244094488188976</probabilities> 
+	 	 </cpt> 
+	 	 <cpt id="Body_temperature"> 
+	 	 	 <state id="99" /> 
+	 	 	 <state id="102" /> 
+	 	 	 <state id="100" /> 
+	 	 	 <state id="101" /> 
+	 	 	 <state id="96" /> 
+	 	 	 <state id="98" /> 
+	 	 	 <state id="97" /> 
+	 	 	 <state id="103" /> 
+	 	 	 <probabilities>0.36220472440944884 0.2204724409448819 0.18110236220472442 0.10236220472440945 0.015748031496062992 0.07874015748031496 0.007874015748031496 0.031496062992125984</probabilities> 
+	 	 </cpt> 
+	 	 <cpt id="Sore_throat"> 
+	 	 	 <state id="0" /> 
+	 	 	 <state id="1" /> 
+	 	 	 <probabilities>0.44881889763779526 0.5511811023622047</probabilities> 
+	 	 </cpt> 
+	 	 <cpt id="Travel_history_to_infected_countries"> 
+	 	 	 <state id="0" /> 
+	 	 	 <state id="1" /> 
+	 	 	 <probabilities>0.5354330708661418 0.4645669291338583</probabilities> 
+	 	 </cpt> 
+	 	 <cpt id="Dry_cough"> 
+	 	 	 <state id="0" /> 
+	 	 	 <state id="1" /> 
+	 	 	 <parents>Sore_throat</parents> 
+	 	 	 <probabilities>0.6491228070175439 0.3508771929824561 0.4 0.6</probabilities> 
+	 	 </cpt> 
+	 	 <cpt id="Weakness"> 
+	 	 	 <state id="0" /> 
+	 	 	 <state id="1" /> 
+	 	 	 <parents>Age</parents> 
+	 	 	 <probabilities>0.7666666666666667 0.23333333333333334 0.42857142857142855 0.5714285714285714 0.6071428571428571 0.39285714285714285 0.5128205128205128 0.48717948717948717 0.5 0.5 0.8 0.2 0.0 1.0</probabilities> 
+	 	 </cpt> 
+	 	 <cpt id="Drowsiness"> 
+	 	 	 <state id="0" /> 
+	 	 	 <state id="1" /> 
+	 	 	 <parents>Body_temperature</parents> 
+	 	 	 <probabilities>0.6956521739130435 0.30434782608695654 0.5357142857142857 0.4642857142857143 0.34782608695652173 0.6521739130434783 0.46153846153846156 0.5384615384615384 1.0 0.0 0.8 0.2 1.0 0.0 0.25 0.75</probabilities> 
+	 	 </cpt> 
+	 	 <cpt id="Diabetes"> 
+	 	 	 <state id="0" /> 
+	 	 	 <state id="1" /> 
+	 	 	 <parents>Gender</parents> 
+	 	 	 <probabilities>0.835820895522388 0.16417910447761194 0.6666666666666666 0.3333333333333333</probabilities> 
+	 	 </cpt> 
+	 	 <cpt id="High_blood_pressue"> 
+	 	 	 <state id="0" /> 
+	 	 	 <state id="1" /> 
+	 	 	 <parents>Diabetes</parents> 
+	 	 	 <probabilities>0.875 0.125 0.22580645161290322 0.7741935483870968</probabilities> 
+	 	 </cpt> 
+	 	 <cpt id="Corona_result"> 
+	 	 	 <state id="0" /> 
+	 	 	 <state id="1" /> 
+	 	 	 <state id="2" /> 
+	 	 	 <parents>Travel_history_to_infected_countries</parents> 
+	 	 	 <probabilities>0.4411764705882353 0.47058823529411764 0.08823529411764706 0.05084745762711865 0.6271186440677966 0.3220338983050847</probabilities> 
+	 	 </cpt> 
+	 	 <cpt id="Pain_in_chest"> 
+	 	 	 <state id="0" /> 
+	 	 	 <state id="1" /> 
+	 	 	 <parents>Corona_result</parents> 
+	 	 	 <probabilities>0.9393939393939394 0.06060606060606061 0.5797101449275363 0.42028985507246375 0.36 0.64</probabilities> 
+	 	 </cpt> 
+	 	 <cpt id="Heart_disease"> 
+	 	 	 <state id="0" /> 
+	 	 	 <state id="1" /> 
+	 	 	 <parents>Pain_in_chest Diabetes</parents> 
+	 	 	 <probabilities>0.9538461538461539 0.046153846153846156 0.5333333333333333 0.4666666666666667 0.9354838709677419 0.06451612903225806 1.0 0.0</probabilities> 
+	 	 </cpt> 
+	 	 <cpt id="Lung_disease"> 
+	 	 	 <state id="0" /> 
+	 	 	 <state id="1" /> 
+	 	 	 <parents>Corona_result</parents> 
+	 	 	 <probabilities>0.9696969696969697 0.030303030303030304 0.8695652173913043 0.13043478260869565 0.68 0.32</probabilities> 
+	 	 </cpt> 
+	 	 <cpt id="Stroke_or_reduced_immunity"> 
+	 	 	 <state id="0" /> 
+	 	 	 <state id="1" /> 
+	 	 	 <parents>Lung_disease</parents> 
+	 	 	 <probabilities>0.8990825688073395 0.10091743119266056 0.4444444444444444 0.5555555555555556</probabilities> 
+	 	 </cpt> 
+	 	 <cpt id="Kidney_disease"> 
+	 	 	 <state id="0" /> 
+	 	 	 <state id="1" /> 
+	 	 	 <parents>Gender Lung_disease</parents> 
+	 	 	 <probabilities>0.896551724137931 0.10344827586206896 1.0 0.0 0.9019607843137255 0.09803921568627451 0.3333333333333333 0.6666666666666666</probabilities> 
+	 	 </cpt> 
+	 	 <cpt id="Change_in_appetite"> 
+	 	 	 <state id="0" /> 
+	 	 	 <state id="1" /> 
+	 	 	 <parents>Drowsiness Pain_in_chest</parents> 
+	 	 	 <probabilities>0.82 0.18 0.8695652173913043 0.13043478260869565 0.4666666666666667 0.5333333333333333 0.041666666666666664 0.9583333333333334</probabilities> 
+	 	 </cpt> 
+	 	 <cpt id="Breathing_problem"> 
+	 	 	 <state id="0" /> 
+	 	 	 <state id="1" /> 
+	 	 	 <parents>Weakness Pain_in_chest</parents> 
+	 	 	 <probabilities>0.7692307692307693 0.23076923076923078 0.4782608695652174 0.5217391304347826 0.7142857142857143 0.2857142857142857 0.041666666666666664 0.9583333333333334</probabilities> 
+	 	 </cpt> 
+	 	 <cpt id="Loss_of_sense_of_smell"> 
+	 	 	 <state id="0" /> 
+	 	 	 <state id="1" /> 
+	 	 	 <parents>Breathing_problem Drowsiness</parents> 
+	 	 	 <probabilities>0.8461538461538461 0.15384615384615385 0.48484848484848486 0.5151515151515151 0.38235294117647056 0.6176470588235294 0.38095238095238093 0.6190476190476191</probabilities> 
+	 	 </cpt> 
+	 	 <cpt id="Symptoms_progressed"> 
+	 	 	 <state id="0" /> 
+	 	 	 <state id="1" /> 
+	 	 	 <parents>Loss_of_sense_of_smell</parents> 
+	 	 	 <probabilities>0.6142857142857143 0.38571428571428573 0.40350877192982454 0.5964912280701754</probabilities> 
+	 	 </cpt> 
+	 </nodes> 
+	 <extensions> 
+	 	 <genie version="1.0" app="GeNIe 3.0.5905.0 ACADEMIC" name="Bayesys_network"> 
+	 	 	 <node id="Age"> 
+	 	 	 	 <name>Age</name> 
+	 	 	 	 <interior color="e5f6f7" /> 
+	 	 	 	 <outline color="000080" /> 
+	 	 	 	 <font color="000000" name="Arial" size="8" /> 
+	 	 	 	 <position>100 100 100 100</position> 
+	 	 	 	 <barchart active="true" /> 
+	 	 	 </node> 
+	 	 	 <node id="Gender"> 
+	 	 	 	 <name>Gender</name> 
+	 	 	 	 <interior color="e5f6f7" /> 
+	 	 	 	 <outline color="000080" /> 
+	 	 	 	 <font color="000000" name="Arial" size="8" /> 
+	 	 	 	 <position>100 100 100 100</position> 
+	 	 	 	 <barchart active="true" /> 
+	 	 	 </node> 
+	 	 	 <node id="Body_temperature"> 
+	 	 	 	 <name>Body_temperature</name> 
+	 	 	 	 <interior color="e5f6f7" /> 
+	 	 	 	 <outline color="000080" /> 
+	 	 	 	 <font color="000000" name="Arial" size="8" /> 
+	 	 	 	 <position>100 100 100 100</position> 
+	 	 	 	 <barchart active="true" /> 
+	 	 	 </node> 
+	 	 	 <node id="Dry_cough"> 
+	 	 	 	 <name>Dry_cough</name> 
+	 	 	 	 <interior color="e5f6f7" /> 
+	 	 	 	 <outline color="000080" /> 
+	 	 	 	 <font color="000000" name="Arial" size="8" /> 
+	 	 	 	 <position>100 100 100 100</position> 
+	 	 	 	 <barchart active="true" /> 
+	 	 	 </node> 
+	 	 	 <node id="Sore_throat"> 
+	 	 	 	 <name>Sore_throat</name> 
+	 	 	 	 <interior color="e5f6f7" /> 
+	 	 	 	 <outline color="000080" /> 
+	 	 	 	 <font color="000000" name="Arial" size="8" /> 
+	 	 	 	 <position>100 100 100 100</position> 
+	 	 	 	 <barchart active="true" /> 
+	 	 	 </node> 
+	 	 	 <node id="Weakness"> 
+	 	 	 	 <name>Weakness</name> 
+	 	 	 	 <interior color="e5f6f7" /> 
+	 	 	 	 <outline color="000080" /> 
+	 	 	 	 <font color="000000" name="Arial" size="8" /> 
+	 	 	 	 <position>100 100 100 100</position> 
+	 	 	 	 <barchart active="true" /> 
+	 	 	 </node> 
+	 	 	 <node id="Breathing_problem"> 
+	 	 	 	 <name>Breathing_problem</name> 
+	 	 	 	 <interior color="e5f6f7" /> 
+	 	 	 	 <outline color="000080" /> 
+	 	 	 	 <font color="000000" name="Arial" size="8" /> 
+	 	 	 	 <position>100 100 100 100</position> 
+	 	 	 	 <barchart active="true" /> 
+	 	 	 </node> 
+	 	 	 <node id="Drowsiness"> 
+	 	 	 	 <name>Drowsiness</name> 
+	 	 	 	 <interior color="e5f6f7" /> 
+	 	 	 	 <outline color="000080" /> 
+	 	 	 	 <font color="000000" name="Arial" size="8" /> 
+	 	 	 	 <position>100 100 100 100</position> 
+	 	 	 	 <barchart active="true" /> 
+	 	 	 </node> 
+	 	 	 <node id="Pain_in_chest"> 
+	 	 	 	 <name>Pain_in_chest</name> 
+	 	 	 	 <interior color="e5f6f7" /> 
+	 	 	 	 <outline color="000080" /> 
+	 	 	 	 <font color="000000" name="Arial" size="8" /> 
+	 	 	 	 <position>100 100 100 100</position> 
+	 	 	 	 <barchart active="true" /> 
+	 	 	 </node> 
+	 	 	 <node id="Travel_history_to_infected_countries"> 
+	 	 	 	 <name>Travel_history_to_infected_countries</name> 
+	 	 	 	 <interior color="e5f6f7" /> 
+	 	 	 	 <outline color="000080" /> 
+	 	 	 	 <font color="000000" name="Arial" size="8" /> 
+	 	 	 	 <position>100 100 100 100</position> 
+	 	 	 	 <barchart active="true" /> 
+	 	 	 </node> 
+	 	 	 <node id="Diabetes"> 
+	 	 	 	 <name>Diabetes</name> 
+	 	 	 	 <interior color="e5f6f7" /> 
+	 	 	 	 <outline color="000080" /> 
+	 	 	 	 <font color="000000" name="Arial" size="8" /> 
+	 	 	 	 <position>100 100 100 100</position> 
+	 	 	 	 <barchart active="true" /> 
+	 	 	 </node> 
+	 	 	 <node id="Heart_disease"> 
+	 	 	 	 <name>Heart_disease</name> 
+	 	 	 	 <interior color="e5f6f7" /> 
+	 	 	 	 <outline color="000080" /> 
+	 	 	 	 <font color="000000" name="Arial" size="8" /> 
+	 	 	 	 <position>100 100 100 100</position> 
+	 	 	 	 <barchart active="true" /> 
+	 	 	 </node> 
+	 	 	 <node id="Lung_disease"> 
+	 	 	 	 <name>Lung_disease</name> 
+	 	 	 	 <interior color="e5f6f7" /> 
+	 	 	 	 <outline color="000080" /> 
+	 	 	 	 <font color="000000" name="Arial" size="8" /> 
+	 	 	 	 <position>100 100 100 100</position> 
+	 	 	 	 <barchart active="true" /> 
+	 	 	 </node> 
+	 	 	 <node id="Stroke_or_reduced_immunity"> 
+	 	 	 	 <name>Stroke_or_reduced_immunity</name> 
+	 	 	 	 <interior color="e5f6f7" /> 
+	 	 	 	 <outline color="000080" /> 
+	 	 	 	 <font color="000000" name="Arial" size="8" /> 
+	 	 	 	 <position>100 100 100 100</position> 
+	 	 	 	 <barchart active="true" /> 
+	 	 	 </node> 
+	 	 	 <node id="Symptoms_progressed"> 
+	 	 	 	 <name>Symptoms_progressed</name> 
+	 	 	 	 <interior color="e5f6f7" /> 
+	 	 	 	 <outline color="000080" /> 
+	 	 	 	 <font color="000000" name="Arial" size="8" /> 
+	 	 	 	 <position>100 100 100 100</position> 
+	 	 	 	 <barchart active="true" /> 
+	 	 	 </node> 
+	 	 	 <node id="High_blood_pressue"> 
+	 	 	 	 <name>High_blood_pressue</name> 
+	 	 	 	 <interior color="e5f6f7" /> 
+	 	 	 	 <outline color="000080" /> 
+	 	 	 	 <font color="000000" name="Arial" size="8" /> 
+	 	 	 	 <position>100 100 100 100</position> 
+	 	 	 	 <barchart active="true" /> 
+	 	 	 </node> 
+	 	 	 <node id="Kidney_disease"> 
+	 	 	 	 <name>Kidney_disease</name> 
+	 	 	 	 <interior color="e5f6f7" /> 
+	 	 	 	 <outline color="000080" /> 
+	 	 	 	 <font color="000000" name="Arial" size="8" /> 
+	 	 	 	 <position>100 100 100 100</position> 
+	 	 	 	 <barchart active="true" /> 
+	 	 	 </node> 
+	 	 	 <node id="Change_in_appetite"> 
+	 	 	 	 <name>Change_in_appetite</name> 
+	 	 	 	 <interior color="e5f6f7" /> 
+	 	 	 	 <outline color="000080" /> 
+	 	 	 	 <font color="000000" name="Arial" size="8" /> 
+	 	 	 	 <position>100 100 100 100</position> 
+	 	 	 	 <barchart active="true" /> 
+	 	 	 </node> 
+	 	 	 <node id="Loss_of_sense_of_smell"> 
+	 	 	 	 <name>Loss_of_sense_of_smell</name> 
+	 	 	 	 <interior color="e5f6f7" /> 
+	 	 	 	 <outline color="000080" /> 
+	 	 	 	 <font color="000000" name="Arial" size="8" /> 
+	 	 	 	 <position>100 100 100 100</position> 
+	 	 	 	 <barchart active="true" /> 
+	 	 	 </node> 
+	 	 	 <node id="Corona_result"> 
+	 	 	 	 <name>Corona_result</name> 
+	 	 	 	 <interior color="e5f6f7" /> 
+	 	 	 	 <outline color="000080" /> 
+	 	 	 	 <font color="000000" name="Arial" size="8" /> 
+	 	 	 	 <position>100 100 100 100</position> 
+	 	 	 	 <barchart active="true" /> 
+	 	 	 </node> 
+	 	 </genie> 
+	 </extensions> 
+</smile> 
